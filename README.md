@@ -21,7 +21,7 @@ Extension for Django REST Framework 3 which allows for using content-type applic
 
 ## Features ##
 
-By using the **HalModelSerializer** the Content-Type is application/hal+json.
+By using the **HalModelSerializer** the content is serialized in the HAL JSON format.
 
 ## Example ##
 
@@ -36,6 +36,8 @@ View:
 	class ResourceViewSet(HalCreateModelMixin, ModelViewSet):
 		serializer_class = ResourceSerializer
 		queryset = Resource.objects.all()
+
+Request:
 
 	GET http://localhost/api/resources/1/ HTTP/1.1
 	Content-Type  application/hal+json	
