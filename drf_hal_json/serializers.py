@@ -63,6 +63,7 @@ class HalModelSerializer(NestedFieldsSerializerMixin, ModelSerializer):
             class Meta:
                 model = model_cls
                 fields = [api_settings.URL_FIELD_NAME] + link_field_names
+                extra_kwargs = getattr(self.Meta, 'extra_kwargs', {})
 
         return HalNestedLinksSerializer(instance=self.instance, source="*")
 
@@ -78,6 +79,7 @@ class HalModelSerializer(NestedFieldsSerializerMixin, ModelSerializer):
                 fields = embedded_field_names
                 nested_fields = defined_nested_fields
                 depth = embedded_depth
+                extra_kwargs = getattr(self.Meta, 'extra_kwargs', {})
 
         return HalNestedEmbeddedSerializer(source="*")
 
