@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='drf-hal-json',
-    version="0.9.1",
+    version="0.9.2",
     url='https://github.com/seebass/drf-hal-json',
     license='MIT',
     description='Extension for Django REST Framework 3 which allows for using content-type application/hal-json',
