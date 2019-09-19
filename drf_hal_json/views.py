@@ -11,4 +11,4 @@ class HalCreateModelMixin(CreateModelMixin):
         url_field_data = links_data.get(api_settings.URL_FIELD_NAME)
         if not url_field_data:
             return {}
-        return {'Location': url_field_data}
+        return {'Location': str(url_field_data)}
