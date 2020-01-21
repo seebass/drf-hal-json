@@ -32,8 +32,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True, serialize=False)),
                 ('name', models.CharField(max_length=255)),
-                ('related_resource_1', models.ForeignKey(to='testproject.RelatedResource1')),
-                ('related_resource_2', models.OneToOneField(to='testproject.RelatedResource2')),
+                ('related_resource_1', models.ForeignKey(to='testproject.RelatedResource1', on_delete=models.CASCADE)),
+                ('related_resource_2', models.OneToOneField(to='testproject.RelatedResource2', on_delete=models.CASCADE)),
             ],
         ),
     ]
